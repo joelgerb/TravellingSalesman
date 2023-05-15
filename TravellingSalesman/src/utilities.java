@@ -2,7 +2,7 @@
 public class utilities {
 	
 	
-	public static double pythagoras(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY) {
+	public static double distance(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY) {
 		double base = pointOneX - pointTwoX;
 		double height = pointOneY - pointTwoY;
 		return pythagoras(base, height);
@@ -13,4 +13,3 @@ public class utilities {
 //		return Math.sqrt((height*height)+(base*base));
 	}
 }
-//aaaaaaaa

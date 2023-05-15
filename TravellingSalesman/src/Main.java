@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
 	public static boolean run = true;
 	static inputParser parser = new inputParser();
-	Scanner inputReader = new Scanner(System.in);
 	
 	public static void main(String args[]) {
 		
