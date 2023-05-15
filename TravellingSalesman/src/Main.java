@@ -1,6 +1,23 @@
+import java.util.Scanner;
 
 public class Main {
+	public static boolean run = true;
+	static inputParser parser = new inputParser();
+	Scanner inputReader = new Scanner(System.in);
+	
 	public static void main(String args[]) {
-		System.out.println("Hello World");
+		
+		System.out.println("Use the command -q to quit the program");
+		Scanner inputReader = new Scanner(System.in);
+		
+		while(run) {
+			System.out.print("->");
+		    String userInput = inputReader.nextLine();
+		    
+		    parser.parseInput(userInput);
+		    
+		}
+		
+		inputReader.close();
 	}
 }
