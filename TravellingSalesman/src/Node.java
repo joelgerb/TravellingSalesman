@@ -23,4 +23,4 @@ public class Node {
 	public double getYPosition() {
 		return this.yPosition;
 	}
-}
+} 
