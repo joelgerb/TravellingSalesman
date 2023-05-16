@@ -1,0 +1,12 @@
+TODO LIST
+
+-Create a system to add new nodes
+-Allow Solvers to access list of nodes.
+-Implement Solver interface?
+-Try not to cry
+
+-Implement Nearest Neighbor
+-Implement Recursion
+-Implement Ant Colony Optimization
+
+-GUI

@@ -1,12 +1,23 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	public static boolean run = true;
 	static inputParser parser = new inputParser();
 	
+	public static ArrayList <Node> nodes = new ArrayList<Node>();
+	
 	public static void main(String args[]) {
 		
-		System.out.println("Use the command -q to quit the program");
+		//Hard coded cities for testing
+		nodes.add(new Node("a", 0.0, 0.0));
+		nodes.add(new Node("b", 1.0, 0.0));
+		nodes.add(new Node("c", 1.0, 1.0));
+		nodes.add(new Node("d", 1.5, 0.0));
+		
+		
+		
+		System.out.println("Use the command -h if you need help");
 		Scanner inputReader = new Scanner(System.in);
 		
 		while(run) {
