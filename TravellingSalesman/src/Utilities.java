@@ -1,5 +1,5 @@
 
-public class utilities {
+public class Utilities {
 	
 	
 	public static double distance(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY) {

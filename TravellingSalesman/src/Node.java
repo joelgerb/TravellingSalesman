@@ -20,7 +20,7 @@ public class Node {
 		Node closestNode = null;
 		
 		for(Node node: nodes) {
-			double distance = utilities.distance(this.xPosition, this.yPosition, node.getXPosition(), node.getYPosition());
+			double distance = Utilities.distance(this.xPosition, this.yPosition, node.getXPosition(), node.getYPosition());
 			if(distance < closestDistance && distance != 0) {
 				closestNode = node;
 				closestDistance = distance;

@@ -3,6 +3,7 @@ TODO LIST
 -Create a system to add new nodes
 -Allow Solvers to access list of nodes.
 -Implement Solver interface?
+-implement an interface "solver" for each method to make sure we use OOP2
 -Try not to cry
 
 -Implement Nearest Neighbor
@@ -10,3 +11,7 @@ TODO LIST
 -Implement Ant Colony Optimization
 
 -GUI
+
+
+-Settings to add:
+-

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 	public static boolean run = true;
-	static inputParser parser = new inputParser();
+	static InputParser parser = new InputParser();
 	
 	public static ArrayList <Node> nodes = new ArrayList<Node>();
 	

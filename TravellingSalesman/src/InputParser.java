@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class inputParser {
+public class InputParser {
 
 	public void parseInput(String userInput) {
 		
