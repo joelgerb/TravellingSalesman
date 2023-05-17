@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class NearestNeighbour {
 	
 	private ArrayList<Node> nodes;
-	private double shortestPath;
 	
 	public NearestNeighbour(ArrayList<Node> nodes) {
 		this.nodes = nodes;
