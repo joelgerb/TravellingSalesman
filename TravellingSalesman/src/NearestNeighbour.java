@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class NearestNeighbour {
 	
 	private ArrayList<Node> nodes;
+	ArrayList<Node> bestPath = new ArrayList<Node>();
 	
 	public NearestNeighbour(ArrayList<Node> nodes) {
 		this.nodes = nodes;
@@ -20,10 +21,11 @@ public class NearestNeighbour {
 		while (unvisitedNodes.size() > 0) {
 			nextNode = currentNode.getClosestNode(unvisitedNodes);
 			totalDistance += Utilities.distance(currentNode, nextNode);
+			bestPath.add(currentNode);
 			currentNode = nextNode;
 			unvisitedNodes.remove(currentNode);
 		}
-		System.out.println(totalDistance);
+		Utilities.printSolution(bestPath, totalDistance);
 		
 		
 	}
