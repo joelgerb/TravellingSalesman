@@ -9,7 +9,7 @@ public class Main {
 	
 	public static void main(String args[]) {
 		
-		//Hard coded cities for testing
+		//Hard coded nodes for testing
 		nodes.add(new Node("a", 0.0, 0.0));
 		nodes.add(new Node("b", 1.0, 0.0));
 		nodes.add(new Node("c", 1.0, 1.0));
