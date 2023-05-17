@@ -4,6 +4,7 @@ public class Node {
 	private String name;
 	private double xPosition;
 	private double yPosition;
+	private boolean visited;
 	
 	public Node(double xposition, double yposition) {
 		this("null", xposition, yposition);
@@ -13,6 +14,7 @@ public class Node {
 		this.name = name;
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
+		this.visited = false;
 	}
 	
 	public Node getClosestNode(ArrayList<Node> nodes) {
@@ -40,5 +42,13 @@ public class Node {
 	
 	public double getYPosition() {
 		return this.yPosition;
+	}
+	
+	public boolean getVisited() {
+		return this.visited;
+	}
+	
+	public void setVisited(boolean value) {
+		this.visited = value;
 	}
 } 
