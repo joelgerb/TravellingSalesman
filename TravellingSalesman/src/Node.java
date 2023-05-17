@@ -16,7 +16,7 @@ public class Node {
 	}
 	
 	public Node getClosestNode(ArrayList<Node> nodes) {
-		double closestDistance = 128371298479128749128.0; //I'll fix this later
+		double closestDistance = Double.POSITIVE_INFINITY;
 		Node closestNode = null;
 		
 		for(Node node: nodes) {
