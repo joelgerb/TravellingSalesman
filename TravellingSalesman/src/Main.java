@@ -11,9 +11,11 @@ public class Main {
 		
 		//Hard coded nodes for testing
 		nodes.add(new Node("a", 0.0, 0.0));
-		nodes.add(new Node("b", 1.0, 0.0));
-		nodes.add(new Node("c", 1.0, 1.0));
-		nodes.add(new Node("d", 1.5, 0.0));
+		nodes.add(new Node("b", 1.0, 1.0));
+		nodes.add(new Node("e", 3, -0.5));
+		nodes.add(new Node("c", 1.5, 1.5));
+		nodes.add(new Node("d", 2, 0.5));
+
 		
 		
 		
