@@ -18,7 +18,8 @@ public class NearestNeighbour {
 		
 		ArrayList<Node> unvisitedNodes = nodes;
 		
-		while (unvisitedNodes.size() > 0) {
+		
+		while (unvisitedNodes.size()  > 0) {
 			nextNode = currentNode.getClosestNode(unvisitedNodes);
 			totalDistance += Utilities.distance(currentNode, nextNode);
 			bestPath.add(currentNode);
@@ -26,7 +27,6 @@ public class NearestNeighbour {
 			unvisitedNodes.remove(currentNode);
 		}
 		Utilities.printSolution(bestPath, totalDistance);
-		
-		//aaa
+	
 	}
 }

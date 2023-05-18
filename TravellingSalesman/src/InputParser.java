@@ -4,6 +4,8 @@ public class InputParser {
 
 	public void parseInput(String userInput) {
 		
+		Scanner inputReader = new Scanner(System.in);
+		
 		if(userInput.equals("-q")) {
 			System.out.println("Program Terminated");
 			Main.run = false;
@@ -11,8 +13,9 @@ public class InputParser {
 		
 		
 		else if(userInput.equals("-h")) {
-			System.out.println("-q: Quit the program");
-			System.out.println("-s: Start a solve");
+			System.out.println("-q:   Quit the program");
+			System.out.println("-add: add a new node");
+			System.out.println("-s:   Start a solve");
 			System.out.println("	-a: Solve using ants");
 			System.out.println("	-r: Solve using recursion");
 			System.out.println("	-n: solve using nearest neighbour");
@@ -21,6 +24,17 @@ public class InputParser {
 		else if(userInput.equals("-a")) {
 			AntColony antSolver = new AntColony();
 			antSolver.solve();
+		}
+		
+		else if(userInput.equals("-add")) {
+			System.out.print("X:");
+			Double x = 	Double.parseDouble(inputReader.nextLine());
+			System.out.print("Y:");
+			Double y = 	Double.parseDouble(inputReader.nextLine());
+			System.out.print("Name:");
+			String name = inputReader.nextLine();
+			Node node = new Node(name, x, y);
+			Main.nodes.add(node);
 		}
 		
 		else if(userInput.equals("-n")) {
@@ -39,7 +53,6 @@ public class InputParser {
 			System.out.println("-r: Recursion");
 			System.out.println("-n: Nearest Neighbour");
 			
-			Scanner inputReader = new Scanner(System.in);
 			System.out.print("->");
 		    String input = inputReader.nextLine();
 		    

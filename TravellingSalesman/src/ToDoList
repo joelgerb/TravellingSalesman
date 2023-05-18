@@ -1,12 +1,11 @@
 TODO LIST
 
--Create a system to add new nodes
+-Create a system to add new nodes -IN PROGRESS
 -Allow Solvers to access list of nodes.
 -Implement Solver interface?
--implement an interface "solver" for each method to make sure we use OOP2
 -Try not to cry
 
--Implement Nearest Neighbor
+-Implement Nearest Neighbor - DONE!
 -Implement Recursion
 -Implement Ant Colony Optimization
 
