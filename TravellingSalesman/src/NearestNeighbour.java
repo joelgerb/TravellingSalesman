@@ -16,8 +16,8 @@ public class NearestNeighbour {
 		Node currentNode = startingNode;
 		Node nextNode;
 		
-		ArrayList<Node> unvisitedNodes = nodes;
-		
+		ArrayList<Node> unvisitedNodes = (ArrayList<Node>) nodes.clone();
+		 
 		
 		while (unvisitedNodes.size()  > 0) {
 			nextNode = currentNode.getClosestNode(unvisitedNodes);
