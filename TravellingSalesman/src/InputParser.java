@@ -69,6 +69,7 @@ public class InputParser {
 			else if(input.equals("-n")) {
 				NearestNeighbour neighbourSolver = new NearestNeighbour(Main.nodes);
 				neighbourSolver.solve();
+				
 			}
 		    
 		}

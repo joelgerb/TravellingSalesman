@@ -30,4 +30,14 @@ public class Utilities {
 		}
 		System.out.println("Path length: " + distance );
 	}
+	
+	public static double pathLength(ArrayList<Node> path) {
+		double totalDistance = 0;
+		
+		for(int i = 0; i < path.size() - 1; i ++) {
+			totalDistance += distance(path.get(i), path.get(i + 1));
+		}
+		
+		return totalDistance;
+	}
 }

@@ -15,8 +15,9 @@ public class Main {
 		nodes.add(new Node("e", 3, -0.5));
 		nodes.add(new Node("c", 1.5, 1.5));
 		nodes.add(new Node("d", 2, 0.5));
-		nodes.add(new Node("f", 40, 0.5));
-
+		nodes.add(new Node("f", 10, 0.5));
+		
+		// Recursive.generate();
 		
 		
 		

@@ -12,21 +12,28 @@ public class NearestNeighbour {
 	public void solve() {
 		
 		double totalDistance = 0;
-		Node startingNode = nodes.get(0);
-		Node currentNode = startingNode;
+		Node firstNode = nodes.get(0);
+		Node currentNode = nodes.get(0);
 		Node nextNode;
 		
-		ArrayList<Node> unvisitedNodes = (ArrayList<Node>) nodes.clone();
-		 
+		ArrayList<Node> unvisitedNodes = new ArrayList<Node>(nodes);
+		bestPath.add(nodes.get(0));
+		unvisitedNodes.remove(0);
 		
-		while (unvisitedNodes.size()  > 0) {
+		 
+		while (unvisitedNodes.size()  != 0) {
+			
 			nextNode = currentNode.getClosestNode(unvisitedNodes);
 			totalDistance += Utilities.distance(currentNode, nextNode);
-			bestPath.add(currentNode);
+			
+			bestPath.add(nextNode);
 			currentNode = nextNode;
 			unvisitedNodes.remove(currentNode);
 		}
+		bestPath.add(firstNode);
+		totalDistance += Utilities.distance(currentNode, firstNode);
+		
 		Utilities.printSolution(bestPath, totalDistance);
-	
+		
 	}
 }

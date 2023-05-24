@@ -1,82 +1,60 @@
-import java.util.ArrayList;
+import java.util.*;
+
 
 
 public class Recursive {
-	public static void printAllRecursive(int n, ArrayList<Node> input) {
-		ArrayList<Node> nodes = (ArrayList<Node>) input.clone();
-		
-	    if(n == 1) {
-	        
-	    } else {
-	        for(int i = 0; i < n-1; i++) {
-	            printAllRecursive(n - 1, nodes);
-	            if(n % 2 == 0) {
-	                swap(nodes, i, n-1);
-	            } else {
-	                swap(nodes, 0, n-1);
+	   public static ArrayList<Node> Generate ( ArrayList<Node> permutation, ArrayList<Node> elements, Boolean[] positions ) {
+		   ArrayList<Node> bestPath = new ArrayList<Node>();
+		   Double bestDistance = Double.POSITIVE_INFINITY;
+		   
+	        if ( permutation.size() == elements.size() ) {
+
+	            for ( int i = 0; i < elements.size(); i++ )
+	                bestPath.add(permutation.get(i));
+	            System.out.println();
+
+	        } else {
+	            for (int i = 0; i < elements.size(); i++ ) {
+	                if ( positions[i] )
+	                    continue;
+
+	                positions[i] = Boolean.TRUE;
+	                permutation.add(elements.get(i));
+
+	                Generate( permutation, elements, positions );
+
+	                permutation.remove(permutation.size()-1);
+	                positions[i] = Boolean.FALSE;
 	            }
 	        }
-	        printAllRecursive(n - 1, nodes);
+	        return bestPath;
 	    }
-	}
-	
-	private static void swap(ArrayList<Node> nodes, int a, int b) {
-	    Node temp = nodes.get(a);
-	    nodes.set(a, nodes.get(b));
-	    nodes.set(b, temp);
-	}
+	   public static void generate(){
+		    int size;
+
+	        Scanner sc = new Scanner ( System.in );
+
+	        System.out.print( "Size: " );
+	        size = sc.nextInt();
+
+	        ArrayList<Node> permutation = new ArrayList<Node>();
+	        ArrayList<Node> elements = new ArrayList<Node>();
+	        Boolean [] positions = new Boolean [size];
+
+	        Arrays.fill(positions, Boolean.FALSE);
+
+	        for (int i = 0; i < size ; i++ ) {
+	            System.out.print( "Element " + i + " : ");
+	            String name = sc.next();
+	            elements.add(new Node(name, 1, 1));
+	        }
+
+	        System.out.println( "\nPermutations" );
+	        Generate ( permutation, elements, positions );
+	        
+	   }
+
 }
 
 
 
-
-
-
-
-//public class Recursive {
-//	public void solve(ArrayList<Node> nodes) {
-//		double distance = 0;
-//		double bestDistance = Double.POSITIVE_INFINITY;
-//		System.out.println("I'm Solving using recursion!");
-//		
-//		
-//		for (int i = 0; i < nodes.size(); i++) {
-//			
-//			
-//			solve(nodes, nodes.get(i), distance, bestDistance);
-//			nodes.get(i).setVisited(true);
-//			
-//			if (distance < bestDistance) {
-//				bestDistance = distance;
-//			}
-//			distance = 0;
-//
-//		
-//			//im trying to figure this out
-////			distance += Utilities.distance(previousNode.getX, previousNode.getY, ode.getX, node.getY)
-////			solve(nodes, distance);
-//		}
-//		for (int i = 0; i < nodes.size(); i++) {
-//			nodes.get(i).setVisited(false);
-//		}
-//		
-//	}
-//	
-//	public void solve(ArrayList<Node> nodes, Node lastNode, double distance, double bestDistance) {
-//		for (int i = 0; i < nodes.size(); i++) {
-//			
-//			if (nodes.get(i).getVisited() == false) {
-//				distance += Utilities.distance(lastNode, nodes.get(i));
-//				solve(nodes, nodes.get(i), distance, bestDistance);
-//				nodes.get(i).setVisited(true);
-//			}
-//			
-//			//im trying to figure this out
-////			distance += Utilities.distance(previousNode.getX, previousNode.getY, ode.getX, node.getY)
-////			solve(nodes, distance);
-//		}
-//		
-//	}
-//	
-//	
-//}
