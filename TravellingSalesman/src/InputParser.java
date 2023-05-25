@@ -63,7 +63,7 @@ public class InputParser {
 			
 			else if(input.equals("-r")) {
 				Recursive recursiveSolver = new Recursive();
-//				recursiveSolver.solve();
+				recursiveSolver.solve();
 			}
 		    
 			else if(input.equals("-n")) {
