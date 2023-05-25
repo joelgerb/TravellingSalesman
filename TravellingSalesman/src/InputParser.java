@@ -44,7 +44,7 @@ public class InputParser {
 		
 		else if(userInput.equals("-r")) {
 			Recursive recursiveSolver = new Recursive();
-//			recursiveSolver.solve();
+			recursiveSolver.solve();
 		}
 		
 		else if(userInput.equals("-s")) {

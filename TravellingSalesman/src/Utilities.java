@@ -15,7 +15,6 @@ public class Utilities {
 	
 	public static double pythagoras(double base, double height) {
 		return Math.hypot(base, height);
-//		return Math.sqrt((height*height)+(base*base));
 	}
 	
 	public static void printSolution(ArrayList<Node> solution, Double distance) {

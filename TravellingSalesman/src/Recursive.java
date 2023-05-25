@@ -3,15 +3,26 @@ import java.util.*;
 
 
 public class Recursive {
+	
+		static ArrayList<Node> bestPath = new ArrayList<Node>();
+		static Double bestLength = Double.POSITIVE_INFINITY;
 	   public static ArrayList<Node> Generate ( ArrayList<Node> permutation, ArrayList<Node> elements, Boolean[] positions ) {
-		   ArrayList<Node> bestPath = new ArrayList<Node>();
-		   Double bestDistance = Double.POSITIVE_INFINITY;
+		   ArrayList<Node> path = new ArrayList<Node>();
 		   
 	        if ( permutation.size() == elements.size() ) {
 
 	            for ( int i = 0; i < elements.size(); i++ )
-	                bestPath.add(permutation.get(i));
-	            System.out.println();
+	                path.add(permutation.get(i));
+	            Double pathLength = Utilities.pathLength(path);
+	            if(pathLength < bestLength) {
+	            	
+	            	System.out.println("New best path");
+	            	bestPath = path;
+	            	bestLength = pathLength;
+	            	Utilities.printSolution(bestPath, pathLength);
+	            }
+	            
+
 
 	        } else {
 	            for (int i = 0; i < elements.size(); i++ ) {
@@ -29,27 +40,14 @@ public class Recursive {
 	        }
 	        return bestPath;
 	    }
-	   public static void generate(){
-		    int size;
-
-	        Scanner sc = new Scanner ( System.in );
-
-	        System.out.print( "Size: " );
-	        size = sc.nextInt();
+	   public static void solve(){
 
 	        ArrayList<Node> permutation = new ArrayList<Node>();
-	        ArrayList<Node> elements = new ArrayList<Node>();
-	        Boolean [] positions = new Boolean [size];
+	        ArrayList<Node> elements = new ArrayList<Node>(Main.nodes);
+	        Boolean [] positions = new Boolean [Main.nodes.size()];
 
 	        Arrays.fill(positions, Boolean.FALSE);
 
-	        for (int i = 0; i < size ; i++ ) {
-	            System.out.print( "Element " + i + " : ");
-	            String name = sc.next();
-	            elements.add(new Node(name, 1, 1));
-	        }
-
-	        System.out.println( "\nPermutations" );
 	        Generate ( permutation, elements, positions );
 	        
 	   }
