@@ -10,6 +10,8 @@ public class NearestNeighbour {
 
     }
     public void solve() {
+    	
+    	final long startTime = System.nanoTime();
 
         double totalDistance = 0;
         Node firstNode = nodes.get(0);
@@ -34,6 +36,10 @@ public class NearestNeighbour {
         totalDistance += Utilities.distance(currentNode, firstNode);
 
         Utilities.printSolution(bestPath, totalDistance);
+        
+        final long duration = System.nanoTime() - startTime;
+        
+        System.out.println("Runtime: " + duration/1000000000.0 + "s");
 
     }
 }

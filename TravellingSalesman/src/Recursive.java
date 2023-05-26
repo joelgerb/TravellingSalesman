@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class Recursive {
-
+	final long startTime = System.nanoTime();
+	
     static ArrayList < Node > bestPath = new ArrayList < Node > ();
     static Double bestLength = Double.POSITIVE_INFINITY;
     public static int pathsTried = 0;
@@ -50,9 +51,14 @@ public class Recursive {
         Boolean[] positions = new Boolean[Main.nodes.size()];
 
         Arrays.fill(positions, Boolean.FALSE);
-
+        
+        final long startTime = System.nanoTime();
+        
         Generate(permutation, elements, positions);
-
+        
+        final long duration = System.nanoTime() - startTime;
+        
+        System.out.println("Runtime: " + duration/1000000000.0 + "s");
     }
 
 }

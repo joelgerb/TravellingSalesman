@@ -6,7 +6,6 @@ TODO LIST
 -Try not to cry
 
 -Implement Recursion
-	-Fix Bug where it doesn't add the last node to the path
 	-Fix bug that doesn't let you run two sorts in a row
 -Implement Ant Colony Optimization
 

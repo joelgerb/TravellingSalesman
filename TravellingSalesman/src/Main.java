@@ -19,10 +19,10 @@ public class Main {
         
         nodes.add(new Node("g", 14, 0.0));
         nodes.add(new Node("h", 13.42, 1.3));
-//       nodes.add(new Node("i", 3.7, -2.5));
-//        nodes.add(new Node("j", 1.6, 1.5));
-//        nodes.add(new Node("k", -2, 0.5));
-//        nodes.add(new Node("l", -10, 0.5));
+        nodes.add(new Node("i", 3.7, -2.5));
+        nodes.add(new Node("j", 1.6, 1.5));
+        nodes.add(new Node("k", -2, 0.5));
+        nodes.add(new Node("l", -10, 0.5));
         
 //       nodes.add(new Node("m", 140, 0.0));
 //        nodes.add(new Node("n", 17.413, 1.3));
