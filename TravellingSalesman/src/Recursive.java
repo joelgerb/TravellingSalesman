@@ -46,19 +46,22 @@ public class Recursive {
     }
     public static void solve() {
 
-        ArrayList < Node > permutation = new ArrayList < Node > ();
-        ArrayList < Node > elements = new ArrayList < Node > (Main.nodes);
-        Boolean[] positions = new Boolean[Main.nodes.size()];
+    	if (!(Main.nodes.isEmpty())) {
+    		ArrayList < Node > permutation = new ArrayList < Node > ();
+            ArrayList < Node > elements = new ArrayList < Node > (Main.nodes);
+            Boolean[] positions = new Boolean[Main.nodes.size()];
 
-        Arrays.fill(positions, Boolean.FALSE);
+            Arrays.fill(positions, Boolean.FALSE);
+            
+            final long startTime = System.nanoTime();
+            
+            Generate(permutation, elements, positions);
+            
+            final long duration = System.nanoTime() - startTime;
+            
+            System.out.println("Runtime: " + duration/1000000000.0 + "s");
+    	}
         
-        final long startTime = System.nanoTime();
-        
-        Generate(permutation, elements, positions);
-        
-        final long duration = System.nanoTime() - startTime;
-        
-        System.out.println("Runtime: " + duration/1000000000.0 + "s");
     }
 
 }

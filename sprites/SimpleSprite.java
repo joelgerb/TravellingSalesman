@@ -1,14 +1,11 @@
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Node implements DisplayableSprite {
-	private String name;
-	private boolean visited;
-	
+public class SimpleSprite implements DisplayableSprite {
+
 	private static Image image;	
 	private double centerX = 0;
 	private double centerY = 0;
@@ -17,16 +14,19 @@ public class Node implements DisplayableSprite {
 	private boolean dispose = false;	
 
 	private final double VELOCITY = 200;
-	
-	public Node(double xposition, double yposition) {
-		this("null", xposition, yposition);
+
+	public SimpleSprite(double centerX, double centerY, double height, double width) {
+		this(centerX, centerY);
+		
+		this.height = height;
+		this.width = width;
 	}
+
 	
-	public Node (String name, double xPosition, double yPosition) {
-		this.name = name;
-		this.centerX = xPosition;
-		this.centerY = yPosition;
-		this.visited = false;
+	public SimpleSprite(double centerX, double centerY) {
+
+		this.centerX = centerX;
+		this.centerY = centerY;
 		
 		if (image == null) {
 			try {
@@ -36,41 +36,6 @@ public class Node implements DisplayableSprite {
 				System.out.println(e.toString());
 			}		
 		}		
-	}
-	
-	public Node getClosestNode(ArrayList<Node> nodes) {
-		double closestDistance = Double.POSITIVE_INFINITY;
-		Node closestNode = null;
-		
-		for(Node node: nodes) {
-			double distance = Utilities.distance(this.centerX, this.centerY, node.getXPosition(), node.getYPosition());
-			if(distance < closestDistance && distance != 0) {
-				closestNode = node;
-				closestDistance = distance;
-			}
-		}
-		
-		return closestNode;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	
-	public double getXPosition() {
-		return this.centerX;
-	}
-	
-	public double getYPosition() {
-		return this.centerY;
-	}
-	
-	public boolean getVisited() {
-		return this.visited;
-	}
-	
-	public void setVisited(boolean value) {
-		this.visited = value;
 	}
 
 	public Image getImage() {
@@ -155,4 +120,5 @@ public class Node implements DisplayableSprite {
 	public void setDispose(boolean dispose) {
 		this.dispose = true;
 	}
-} 
+
+}
